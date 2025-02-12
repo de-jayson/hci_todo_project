@@ -1,0 +1,88 @@
+body {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent), 
+                url('assets/bg-desktop-dark.jpg'); /* Replace with your image path */
+    background-size: 100% auto; /* Full width, auto height */
+    background-position: top; /* Positions image at the top */
+    background-repeat: no-repeat;
+    background-color: #221d33; /* Dark background below */
+    height: 100vh;
+    margin: 0;
+}
+
+.form-control {
+    background: #333;
+    color: white;
+    border: none;
+}
+
+h1{
+    color: aliceblue;
+}
+
+.container1 {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+}
+
+.container2 {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+}
+
+
+.todo-app {
+    background: linear-gradient(135deg, #3a1c71, #2b2c37, #161722);;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.new_todo {
+    background: linear-gradient(135deg, #3a1c71, #2b2c37, #161722);
+   
+}
+
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: linear-gradient(270deg, #3a1c71, #2b2c37, #242637);
+    color: white;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+    
+}
+
+li:hover {
+    transform: scale(1.05);
+}
+
+.filters span {
+    cursor: pointer;
+    margin: 0 5px;
+    transition: color 0.3s;
+    color: azure;
+}
+
+.filters span:hover {
+    color: #ff9800;
+}
