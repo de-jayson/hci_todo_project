@@ -15,8 +15,19 @@ body {
     border: none;
 }
 
-h1{
+h1 {
     color: aliceblue;
+    width: 20ch;
+    font-family: monospace;
+    text-wrap: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(20) infinite alternate-reverse;
+}
+
+@keyframes typing {
+    from {
+        width: 0ch;
+    }
 }
 
 .container1 {
@@ -31,9 +42,8 @@ h1{
     padding: 20px;
 }
 
-
 .todo-app {
-    background: linear-gradient(135deg, #3a1c71, #2b2c37, #161722);;
+    background: linear-gradient(135deg, #3a1c71, #2b2c37, #161722);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
@@ -41,9 +51,7 @@ h1{
 
 .new_todo {
     background: linear-gradient(135deg, #3a1c71, #2b2c37, #161722);
-   
 }
-
 
 input {
     width: 100%;
@@ -53,36 +61,113 @@ input {
     border: none;
 }
 
-
 ul {
     list-style: none;
     padding: 0;
 }
 
 li {
-    background: linear-gradient(270deg, #3a1c71, #2b2c37, #242637);
+    background: #232332; /* Darker background */
     color: white;
-    padding: 12px;
-    margin-top: 5px;
-    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px; /* More rounded corners */
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space elements properly */
     transition: transform 0.2s ease-in-out;
-    
+    box-shadow: 0 4px 10px rgb(7, 7, 7);
+    text-align: left;
+}
+
+/* Align text inside li to the left */
+li span {
+    flex-grow: 1; /* Make text take full space */
+    text-align: left;
+    margin-left: 10px; /* Add spacing after checkbox */
+}
+
+/* Custom checkbox styling */
+li input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%; /* Circular checkbox */
+    border: 2px solid #4c4d51;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Checkbox when checked */
+li input[type="checkbox"]:checked {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent), 
+                url('assets/icon-check.svg');
+    border-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Strikethrough effect when checkbox is checked */
+li input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    opacity: 0.2; /* Make completed tasks faded */
+}
+
+/* Button inside li */
+li button {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.3); /* Subtle faded gray */
+    font-size: 24px; /* Adjust size */
+    cursor: pointer;
+    margin-left: 10px;
+    opacity: 0.3;
+}
+
+li button:hover {
+    color: rgb(84, 83, 83); /* Highlight delete button */
+}
+
+li:hover button {
+    color: rgba(255, 255, 255, 0.5); /* Light gray on hover */
+}
+
+/* Make the close button slightly brighter on hover */
+li:hover button:hover {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 li:hover {
     transform: scale(1.05);
 }
 
+/* Filters */
 .filters span {
     cursor: pointer;
-    margin: 0 5px;
-    transition: color 0.3s;
-    color: azure;
+    padding: 5px 10px;
+    margin: 2px;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8; /* Increase the brightness of unselected buttons */
+    color: #797979;
 }
+
+.filters span.active {
+    font-weight: bold;
+    color: white;
+    opacity: 1; /* Ensure the selected button is fully visible */
+}
+
 
 .filters span:hover {
     color: #ff9800;
+}
+
+/* Clear completed button */
+.clear-completed {
+    float: right;
+    color: #797979;
+}
+
+.active{
+    float: left;
+    color: azure;
 }

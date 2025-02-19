@@ -9,20 +9,20 @@
 </head>
 <body>
     <div class="container1">
-        <h1>TODO</h1>
+        <h1>TODO..</h1>
     </div>
     <div class="container2">
         <div class="todo-app">
             <div class="new_todo">
-            <input type="text" id="new-todo" class="form-control mb-3" placeholder="Create a new todo..." onkeypress="handleKeyPress(event)" >
+            <input type="text" id="new-todo" class="form-control" placeholder="Create a new todo..." onkeypress="handleKeyPress(event)" >
             </div>
         </div>
             <ul id="todo-list"></ul>
             <div class="filters">
-                <span onclick="filterTodos('all')">All</span>
-                <span onclick="filterTodos('active')">Active</span>
-                <span onclick="filterTodos('completed')">Completed</span>
-                <span onclick="clearCompleted()">Clear Completed</span>
+                <span id="ALL" class="active" onclick="setFilter('ALL')">All</span>
+                <span id="ACTIVE" class="active" onclick="setFilter('ACTIVE')">Active</span>
+                <span id="COMPLETED" class="active" onclick="setFilter('COMPLETED')">Completed</span>  
+                <span class="clear-completed" onclick="clearCompleted()">Clear Completed</span>
             </div>
         </div>
     </div>
